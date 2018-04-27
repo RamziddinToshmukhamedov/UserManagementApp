@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding Title}"
+             NavigationPage.HasBackButton="False"
+             x:Class="UserManagementApp.Views.UserDetailPage"
+             BackgroundColor="{StaticResource backgroundColor}">
+    
+    <!--<ContentPage.BindingContext>
+        <viewModels:UserDetailsViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sign out" Command="{Binding LogOutCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout>
+
+        <Grid Padding="16" RowSpacing="0" VerticalOptions="FillAndExpand" BackgroundColor="White" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Source="person" WidthRequest="80" HeightRequest="80" Margin="0, 15, 0, 0" />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Email address" Margin="0, 15, 0, 10" Style="{StaticResource RobotoRegularLabelStyle}" TextColor="Black"/>
+            <Label Grid.Row="2" Grid.Column="0" Text="First Name" Margin="0, 10, 0, 0" Style="{StaticResource RobotoRegularLabelStyle}" TextColor="Black"/>
+            <Label Grid.Row="3" Grid.Column="0" Text="Last Name" Margin="0, 10, 0, 0" Style="{StaticResource RobotoRegularLabelStyle}" TextColor="Black"/>
+
+            <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" LineBreakMode="TailTruncation" Text="{Binding Email}" Margin="0, 15, 0, 10" Style="{StaticResource RobotoLabelStyle}" TextColor="{StaticResource colorGray}" />
+            <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" LineBreakMode="TailTruncation" Text="{Binding FirstName}" Margin="0, 10, 0, 0" Style="{StaticResource RobotoLabelStyle}" TextColor="{StaticResource colorGray}"/>
+            <Label Grid.Row="3" Grid.Column="1" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" LineBreakMode="TailTruncation" Text="{Binding LastName}" Margin="0, 10, 0, 0" Style="{StaticResource RobotoLabelStyle}" TextColor="{StaticResource colorGray}"/>
+
+            <Button Grid.Row="4" Grid.ColumnSpan="2" IsVisible="{Binding IsAdmin}" VerticalOptions="End" Text="Manage Users" Command="{Binding ManageUsersCommand}"/>
+        </Grid>
+
+        <StackLayout IsVisible="{Binding IsLoading}" x:Name="bgLoader" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fff">
+            <ActivityIndicator IsRunning="{Binding IsLoading}" VerticalOptions="CenterAndExpand" WidthRequest="60" HeightRequest="60" />
+        </StackLayout>
+
+    </AbsoluteLayout>
+
+</ContentPage>

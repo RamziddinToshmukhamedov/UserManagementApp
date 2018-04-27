@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UserManagementApp.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="backgroundColor">#F1F0F0</Color>
+            <Color x:Key="colorAccent">#00c853</Color>
+            <Color x:Key="colorAccentDark">#009624</Color>
+            <Color x:Key="colorGray">#797F83</Color>
+            <Color x:Key="colorTextGray">#3A3E42</Color>
+
+            <Style TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource colorAccent}"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="Padding" Value="0,0,0,0"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="OutlineColor" Value="Black"/>
+                <Setter Property="HasShadow" Value="True"/>
+            </Style>
+
+            <Style x:Key="RalewayLabelStyle" TargetType="Label">
+                <Setter Property="Label.FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Raleway Light</OnPlatform.iOS>
+                            <OnPlatform.Android>Raleway-Light.ttf#Raleway-Light</OnPlatform.Android>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="RobotoLabelStyle" TargetType="Label">
+                <Setter Property="Label.FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Roboto Light</OnPlatform.iOS>
+                            <OnPlatform.Android>Roboto-Light.ttf#Roboto-Light</OnPlatform.Android>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="RalewayRegularLabelStyle" TargetType="Label">
+                <Setter Property="Label.FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Raleway Regular</OnPlatform.iOS>
+                            <OnPlatform.Android>Raleway-Regular.ttf#Raleway-Regular</OnPlatform.Android>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="RobotoRegularLabelStyle" TargetType="Label">
+                <Setter Property="Label.FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Roboto Regular</OnPlatform.iOS>
+                            <OnPlatform.Android>Roboto-Regular.ttf#Roboto-Regular</OnPlatform.Android>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    NavigationPage.HasNavigationBar="false"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="UserManagementApp.Views.CheckConnectivityPage"
+    BackgroundColor="{StaticResource colorAccent}">
+    
+    <StackLayout VerticalOptions="Center" Padding="25, 0">
+        <Image Source="wi_fi" WidthRequest="70" HeightRequest="70"/>
+        <Label HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" Text="Check internet connection" Margin="0, 10, 0, 0" FontSize="22" Style="{StaticResource RalewayLabelStyle}" TextColor="White" />
+    </StackLayout>
+
+</ContentPage>

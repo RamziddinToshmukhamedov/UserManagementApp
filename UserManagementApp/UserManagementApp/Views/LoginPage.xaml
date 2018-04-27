@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    NavigationPage.HasNavigationBar="false"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundImage="bg.png"
+    x:Class="UserManagementApp.Views.LoginPage">
+    
+    <!--<ContentPage.BindingContext>
+        <viewModels:LoginViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <AbsoluteLayout>
+
+        <StackLayout VerticalOptions="FillAndExpand"  Padding="16" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Entry Text="{Binding Username}" Placeholder="Username"/>
+                <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True"/>
+
+                <Label Text="{Binding ErrorMessage}" TextColor="OrangeRed"/>
+            </StackLayout>
+            
+            <Button VerticalOptions="End" Command="{Binding LoginCommand}" Text="Login"/>
+
+        </StackLayout>
+
+        <StackLayout IsVisible="{Binding IsLoading}" x:Name="bgLoader" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#B3333333">
+            <ActivityIndicator IsRunning="{Binding IsLoading}" VerticalOptions="CenterAndExpand" WidthRequest="60" HeightRequest="60" Color="White" />
+        </StackLayout>
+
+    </AbsoluteLayout>
+
+</ContentPage>
